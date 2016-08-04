@@ -1,23 +1,33 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Seban
- * Date: 8/3/2016
- * Time: 8:46 AM
- */
 
 class Home extends CI_Controller {
 
-    public function __construct() {
+	/**
+	 * Index Page for this controller.
+	 *
+	 * Maps to the following URL
+	 * 		http://example.com/index.php/welcome
+	 *	- or -
+	 * 		http://example.com/index.php/welcome/index
+	 *	- or -
+	 * Since this controller is set as the default controller in
+	 * config/routes.php, it's displayed at http://example.com/
+	 *
+	 * So any other public methods not prefixed with an underscore will
+	 * map to /index.php/welcome/<method_name>
+	 * @see https://codeigniter.com/user_guide/general/urls.html
+	*/
 
-        parent::__construct();
-        $this->load->helper("url");
-    }
+	public function __construct() {
 
-    public function data() {
+		parent::__construct();
+		$this->load->helper('url');
+	}
 
-        $this->load->view("header");
-        $this->load->view("footer");
+	public function index() {
 
-    }
+		$this->load->view('templates/header');
+		$this->load->view('templates/home_content');
+		$this->load->view('templates/footer');
+	}
 }

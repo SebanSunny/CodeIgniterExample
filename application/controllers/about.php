@@ -8,8 +8,15 @@
 
 class About extends CI_Controller {
 
-    public function data() {
+	public function __construct() {
 
-        $this->load->view("header");
+		parent::__construct();
+		$this->load->helper("url");
+	}
+
+    public function index() {
+
+        $this->load->view("templates/header");
+		$this->load->view("templates/footer");
     }
 }
